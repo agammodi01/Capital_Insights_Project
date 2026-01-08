@@ -1,13 +1,6 @@
 import pandas as pd
 import yfinance as yf
 import pyodbc
-<<<<<<< HEAD
-
-# ===============================
-# 1️⃣ READ STOCK MASTER CSV
-# ===============================
-master = pd.read_csv("C:\\Users\\Lenovo\\OneDrive\\Desktop\\Capital Insights Project\\Data\\stock_master_full.csv")
-=======
 from pathlib import Path
 # ===============================
 # 1️⃣ READ STOCK MASTER CSV
@@ -23,7 +16,6 @@ csv_path = BASE_DIR.parent / "Data" / "stock_master_full.csv"
 master = pd.read_csv(csv_path)
 
 
->>>>>>> b62ef7ac6efa2e51ca2a82120db0834f7a5df26e
 
 yf_symbols = master["YF_SYMBOL"].dropna().tolist()
 # yf_symbols = yf_symbols[:1]   
