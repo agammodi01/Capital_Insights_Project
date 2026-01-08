@@ -2,11 +2,19 @@ import pandas as pd
 import yfinance as yf
 import pyodbc
 from datetime import datetime, timedelta
-
+from pathlib import Path
 # ===============================
 # 1️⃣ READ MASTER CSV
 # ===============================
-master = pd.read_csv("C:\\Users\\Lenovo\\OneDrive\\Desktop\\Capital Insights Project\\Data\\stock_master_full.csv")
+
+# Path of the current Python file
+BASE_DIR = Path(__file__).resolve().parent
+
+# Go one level up, then into Data folder
+csv_path = BASE_DIR.parent / "Data" / "stock_master_full.csv"
+
+master = pd.read_csv(csv_path)
+
 yf_symbols = master["YF_SYMBOL"].dropna().tolist()
 
 # ===============================
